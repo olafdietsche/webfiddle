@@ -6,7 +6,7 @@
 	<meta name="description" content="web fiddle">
         <link rel="stylesheet" href="webfiddle.css">
     </head>
-    <body>
+    <body class="layout-vertical">
         <div id="menu">
             <select id="script">
                 <option value="head">Head</option>
@@ -14,10 +14,12 @@
             </select>
             <button id="update">Update</button>
         </div>
-        <textarea id="html"></textarea>
-        <textarea id="css"></textarea>
-        <textarea id="js"></textarea>
-        <iframe id="web"></iframe>
+        <div id="editors" class="layout-horizontal layout-equal-height">
+            <textarea id="html" class="layout-equal-width"></textarea>
+            <textarea id="css" class="layout-equal-width"></textarea>
+            <textarea id="js" class="layout-equal-width"></textarea>
+        </div>
+        <iframe id="web" class="layout-equal-height"></iframe>
         <script type="text/javascript" src="webfiddle.js"></script>
     </body>
 </html>
