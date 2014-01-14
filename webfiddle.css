@@ -24,7 +24,11 @@ html, body {
     width: 0;
 }
 
+#editors {
+    border-top: 1px solid black;
+}
+
 #web {
     border: none;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
 }

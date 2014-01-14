@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="web fiddle">
         <link rel="stylesheet" href="webfiddle.css">
+        <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body class="layout-vertical">
         <div id="menu">
@@ -15,9 +16,9 @@
             <button id="update">Update</button>
         </div>
         <div id="editors" class="layout-horizontal layout-equal-height">
-            <textarea id="html" class="layout-equal-width"></textarea>
-            <textarea id="css" class="layout-equal-width"></textarea>
-            <textarea id="js" class="layout-equal-width"></textarea>
+            <div id="html" class="layout-equal-width"></div>
+            <div id="css" class="layout-equal-width"></div>
+            <div id="js" class="layout-equal-width"></div>
         </div>
         <iframe id="web" class="layout-equal-height"></iframe>
         <script type="text/javascript" src="webfiddle.js"></script>
