@@ -1,15 +1,7 @@
-var html = document.getElementById('html');
-var html_editor = ace.edit(html);
-html_editor.getSession().setMode('ace/mode/html');
-
-var css = document.getElementById('css');
-var css_editor = ace.edit(css);
-css_editor.getSession().setMode('ace/mode/css');
-
-var script = document.getElementById('script');
-var js = document.getElementById('js');
-var js_editor = ace.edit(js);
-js_editor.getSession().setMode('ace/mode/javascript');
+var html = new editor_panel('html', 'html-switch', 'ace/mode/html');
+var css = new editor_panel('css', 'css-switch', 'ace/mode/css');
+var js = new editor_panel('js', 'js-switch', 'ace/mode/javascript');
+js.script = document.getElementById('js-script');
 
 var web = document.getElementById('web');
 web.srcdoc = '';
@@ -28,17 +20,6 @@ function update_frame() {
     web.srcdoc += '</body>\n</html>\n';
 }
 
-function add_shortcuts(editor) {
-    editor.commands.addCommand({
-	name: 'update',
-	bindKey: {win: 'Ctrl-Return'},
-	exec: update_frame,
-	readOnly: true
-    });
 }
-
-add_shortcuts(html_editor);
-add_shortcuts(css_editor);
-add_shortcuts(js_editor);
 
 update.addEventListener('click', update_frame);

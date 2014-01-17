@@ -9,9 +9,21 @@
     </head>
     <body class="layout-vertical">
         <div id="menu">
-            <select id="script">
+            <select id="html-switch">
+                <option value="show" selected="selected">HTML</option>
+                <option value="hide">Hide</option>
+            </select>
+            <select id="css-switch">
+                <option value="show" selected="selected">CSS</option>
+                <option value="hide">Hide</option>
+            </select>
+            <select id="js-switch">
+                <option value="show" selected="selected">JavaScript</option>
+                <option value="hide">Hide</option>
+            </select>
+            <select id="js-script">
                 <option value="head">Head</option>
-                <option value="body">Body</option>
+                <option value="body" selected="selected">Body</option>
             </select>
             <button id="update">Update</button>
         </div>
@@ -21,6 +33,7 @@
             <div id="js" class="layout-equal-width"></div>
         </div>
         <iframe id="web" class="layout-equal-height"></iframe>
+        <script type="text/javascript" src="editor_panel.js"></script>
         <script type="text/javascript" src="webfiddle.js"></script>
     </body>
 </html>
