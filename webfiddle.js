@@ -4,22 +4,28 @@ var js = new editor_panel('js', 'js-switch', 'ace/mode/javascript');
 js.script = document.getElementById('js-script');
 
 var web = document.getElementById('web');
-web.srcdoc = '';
 var update = document.getElementById('update');
+update.addEventListener('click', update_frame);
+update_frame();
+
+function build_page_source() {
+    var source = '<!DOCTYPE html>\n<html>\n<head>\n';
+    var style = css.getValue();
+    if (style)
+        source += '<style>' + style + '</style>\n';
+
+    if (js.script.value == 'head')
+	source += '<script>' + js.getValue() + '</script>\n';
+
+    source += '</head>\n<body>\n' + html.getValue() + '\n';
+    if (js.script.value == 'body')
+	source += '<script>' + js.getValue() + '</script>\n';
+
+    source += '</body>\n</html>\n';
+    return source;
+}
 
 function update_frame() {
-    web.srcdoc = '<!DOCTYPE html>\n<html>\n<head>\n';
-    web.srcdoc += '<style>' + css_editor.getSession().getValue() + '</style>\n';
-    if (script.value == 'head')
-	web.srcdoc += '<script>' + js_editor.getSession().getValue() + '</script>\n';
-
-    web.srcdoc += '</head>\n<body>\n' + html_editor.getSession().getValue() + '\n';
-    if (script.value == 'body')
-	web.srcdoc += '<script>' + js_editor.getSession().getValue() + '</script>\n';
-
-    web.srcdoc += '</body>\n</html>\n';
+    var source = build_page_source();
+    web.srcdoc = source;
 }
-
-}
-
-update.addEventListener('click', update_frame);
