@@ -41,8 +41,36 @@ html, body {
 .menubar > li {
     display: inline-block;
     padding: 5px 0;
+    position: relative;
 }
 
 .menubar li {
     list-style-type: none;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.menubar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    padding: 0;
+    border-bottom: 1px solid lightgrey;
+    z-index: 10;
+    background-color: white;
+}
+
+.menubar ul li {
+    padding: 0 5px;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+.menubar li:hover ul {
+    display: block;
+}
+
+.menubar li ul li:hover {
+    background-color: lightgrey;
 }
