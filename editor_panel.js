@@ -26,16 +26,11 @@ editor_panel.prototype.add_shortcuts = function() {
 }
 
 editor_panel.prototype.panel_switch = function() {
-    var i = this.select.selectedIndex;
-    var value = this.select.options[i].value;
-    switch (value) {
-    case 'hide':
-        this.panel.style.display = 'none';
-        break;
-    case 'show':
+    if (this.select.checked) {
         this.panel.style.display = 'block';
         this.editor.renderer.updateFull();
-        break;
+    } else {
+        this.panel.style.display = 'none';
     }
 }
 

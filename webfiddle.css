@@ -32,3 +32,17 @@ html, body {
     border: none;
     border-top: 1px solid black;
 }
+
+.menubar {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.menubar > li {
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.menubar li {
+    list-style-type: none;
+}

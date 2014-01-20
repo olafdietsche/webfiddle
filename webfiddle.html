@@ -8,25 +8,18 @@
         <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body class="layout-vertical">
-        <div id="menu">
-            <select id="html-switch">
-                <option value="show" selected="selected">HTML</option>
-                <option value="hide">Hide</option>
-            </select>
-            <select id="css-switch">
-                <option value="show" selected="selected">CSS</option>
-                <option value="hide">Hide</option>
-            </select>
-            <select id="js-switch">
-                <option value="show" selected="selected">JavaScript</option>
-                <option value="hide">Hide</option>
-            </select>
-            <select id="js-script">
-                <option value="head">Head</option>
-                <option value="body" selected="selected">Body</option>
-            </select>
-            <button id="update">Update</button>
-        </div>
+        <ul id="menu" class="menubar">
+            <li><label><input id="html-switch" type="checkbox" checked>HTML</label></li>
+            <li><label><input id="css-switch" type="checkbox" checked>CSS</label></li>
+            <li><label><input id="js-switch" type="checkbox" checked>JavaScript</label></li>
+            <li>
+                <select id="js-script">
+                    <option value="head">Head</option>
+                    <option value="body" selected="selected">Body</option>
+                </select>
+            </li>
+            <li><button id="update">Update</button></li>
+        </ul>
         <div id="editors" class="layout-horizontal layout-equal-height">
             <div id="html" class="layout-equal-width"></div>
             <div id="css" class="layout-equal-width"></div>
