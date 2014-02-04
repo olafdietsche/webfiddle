@@ -41,6 +41,9 @@ function build_page_source() {
     if (js.script.value == 'head')
 	source += '<script>' + js.getValue() + '</script>\n';
 
+    if (js.script.value == 'onload')
+	source += '<script>window.onload = function() {\n' + js.getValue() + '\n};</script>\n';
+
     source += '</head>\n<body>\n' + html.getValue() + '\n';
     if (js.script.value == 'body')
 	source += '<script>' + js.getValue() + '</script>\n';
