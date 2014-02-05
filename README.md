@@ -1,4 +1,4 @@
-= Yet another web fiddle
+# Yet another web fiddle
 
 This is a simple HTML, CSS and Javascript playground.
 
